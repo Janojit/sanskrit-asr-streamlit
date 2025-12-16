@@ -166,7 +166,7 @@ st.title("Sanskrit Automatic Speech Recognition")
 
 st.markdown(
     """
-Upload a **Sanskrit WAV file** or **record from your microphone**.  
+Upload a **Sanskrit WAV file**  
 The system uses **wav2vec2 + Transformer ASR** trained on **Vāksañcayaḥ**.
 """
 )
@@ -186,7 +186,7 @@ if uploaded:
 # ---------------------------------------------------------
 # MICROPHONE (WINDOWS-SAFE)
 # ---------------------------------------------------------
-st.markdown("### 🎙️ Record from Microphone")
+# st.markdown("### 🎙️ Record from Microphone")
 
 ctx = webrtc_streamer(
     key="speech",
