@@ -162,7 +162,7 @@ class AudioProcessor:
 # STREAMLIT UI
 # ---------------------------------------------------------
 st.set_page_config(page_title="Sanskrit ASR", layout="centered")
-st.title("🕉️ Sanskrit Automatic Speech Recognition")
+st.title("Sanskrit Automatic Speech Recognition")
 
 st.markdown(
     """
