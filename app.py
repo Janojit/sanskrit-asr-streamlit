@@ -188,26 +188,26 @@ if uploaded:
 # ---------------------------------------------------------
 # st.markdown("### 🎙️ Record from Microphone")
 
-ctx = webrtc_streamer(
-    key="speech",
-    mode=WebRtcMode.SENDONLY,
-    audio_processor_factory=AudioProcessor,
-    media_stream_constraints={"audio": True, "video": False},
-)
+#ctx = webrtc_streamer(
+#    key="speech",
+#    mode=WebRtcMode.SENDONLY,
+#    audio_processor_factory=AudioProcessor,
+#    media_stream_constraints={"audio": True, "video": False},
+#)
 
-if ctx.audio_processor:
-    if st.button("🛑 Stop & Transcribe"):
-        audio_frames = []
-        while not ctx.audio_processor.audio_buffer.empty():
-            audio_frames.append(ctx.audio_processor.audio_buffer.get())
-
-        if audio_frames:
-            audio = np.concatenate(audio_frames, axis=1).T.astype(np.float32)
-            audio /= np.max(np.abs(audio)) + 1e-9
-
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
-                sf.write(f.name, audio, SAMPLE_RATE)
-                wav_path = f.name
+#if ctx.audio_processor:
+#    if st.button("🛑 Stop & Transcribe"):
+#        audio_frames = []
+#        while not ctx.audio_processor.audio_buffer.empty():
+#            audio_frames.append(ctx.audio_processor.audio_buffer.get())
+#
+#        if audio_frames:
+#            audio = np.concatenate(audio_frames, axis=1).T.astype(np.float32)
+#            audio /= np.max(np.abs(audio)) + 1e-9
+#
+#            with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
+#                sf.write(f.name, audio, SAMPLE_RATE)
+#                wav_path = f.name
 
 # ---------------------------------------------------------
 # RUN INFERENCE
