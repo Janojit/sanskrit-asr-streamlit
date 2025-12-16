@@ -1,0 +1,10 @@
+torch
+transformers
+librosa
+soundfile
+jiwer
+numpy
+accelerate
+streamlit
+streamlit-webrtc
+av
